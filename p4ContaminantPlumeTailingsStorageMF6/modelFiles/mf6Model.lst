@@ -1,0 +1,450 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.6.0 12/20/2024
+
+   MODFLOW 6 compiled Dec 31 2024 17:10:16 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /O2 /heap-arrays:0 /fpe:0 /traceback /nologo /fpp
+/c /module:win64\mod_mf6\ /object:win64\obj_mf6\
+
+System command used to initiate simulation:
+C:\Users\saulm\Documents\GitHub\examplesMf6VoronoiMining\p4ContaminantPlumeTailingsStorageMF6\bin\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    NEWTON-RAPHSON UNDER-RELAXATION based on the bottom elevation of the model will be applied to the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DISV -- VERTEX GRID DISCRETIZATION PACKAGE, VERSION 1 : 12/23/2015 - INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/DISV                           
+
+
+ Setting Discretization Options
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 19
+    NCPL = 7362
+    NVERT = 10857
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    TOP set from input file
+    BOTM set from input file
+ End Setting Discretization Griddata
+
+ Discretization Vertex data loaded
+ Discretization Cell2d data loaded
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/NPF                            
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/MF6MODEL/IC                             
+
+
+ Setting NPF Options
+    Cell-by-cell flow information will be saved to binary file whenever ICBCFL is not zero.
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+    Saturation will be written to DATA-SAT in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ DRN   -- DRN PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/DRN_0                          
+
+ PROCESSING DRN BASE OPTIONS
+ END OF DRN BASE OPTIONS
+
+ PROCESSING DRN OPTIONS
+ END OF DRN OPTIONS
+
+ PROCESSING DRN BASE DIMENSIONS
+    MAXBOUND =     533
+ END OF DRN BASE DIMENSIONS
+
+ GHB   -- GHB PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/GHB_0                          
+
+ PROCESSING GHB BASE OPTIONS
+ END OF GHB BASE OPTIONS
+
+ PROCESSING GHB OPTIONS
+ END OF GHB OPTIONS
+
+ PROCESSING GHB BASE DIMENSIONS
+    MAXBOUND =     289
+ END OF GHB BASE DIMENSIONS
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/RCHA_0                         
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+    RECHARGE INPUT WILL BE READ AS ARRAY(S).
+ END OF RCHA OPTIONS
+
+ EVT   -- EVT PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/EVTA_0                         
+
+ PROCESSING EVT BASE OPTIONS
+ END OF EVT BASE OPTIONS
+
+ PROCESSING EVTA OPTIONS
+    EVAPOTRANSPIRATION INPUT WILL BE READ AS ARRAYS.
+ END OF EVTA OPTIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/STO                            
+
+
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1017
+      FILE NAME: mf6Model.disv.grb
+
+ OPENED mf6Model.disv.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1017   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.9.3 on 09/05/2025 at 15:59:26.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1018
+      FILE NAME: mf6Model.cbc
+
+ OPENED mf6Model.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1019
+      FILE NAME: mf6Model.hds
+
+ OPENED mf6Model.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1019   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS STEADY-STATE
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+         ****FAILED TO MEET SOLVER CONVERGENCE CRITERIA IN TIME STEP 1 OF STRESS PERIOD 1****
+
+end timestep
+
+
+start timestep kper="1" kstp="2" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    2, STRESS PERIOD    1
+
+         ****FAILED TO MEET SOLVER CONVERGENCE CRITERIA IN TIME STEP 2 OF STRESS PERIOD 1****
+
+end timestep
+
+
+start timestep kper="1" kstp="3" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    3, STRESS PERIOD    1
+
+         ****FAILED TO MEET SOLVER CONVERGENCE CRITERIA IN TIME STEP 3 OF STRESS PERIOD 1****
+
+end timestep
+
+
+start timestep kper="1" kstp="4" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    4, STRESS PERIOD    1
+
+         ****FAILED TO MEET SOLVER CONVERGENCE CRITERIA IN TIME STEP 4 OF STRESS PERIOD 1****
+
+end timestep
+
+
+start timestep kper="1" kstp="5" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    5, STRESS PERIOD    1
+
+         ****FAILED TO MEET SOLVER CONVERGENCE CRITERIA IN TIME STEP 5 OF STRESS PERIOD 1****
+
+end timestep
+
+
+start timestep kper="1" kstp="6" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    6, STRESS PERIOD    1
+
+end timestep
+
+
+start timestep kper="1" kstp="7" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    7, STRESS PERIOD    1
+
+end timestep
+
+
+start timestep kper="1" kstp="8" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    8, STRESS PERIOD    1
+
+end timestep
+
+
+start timestep kper="1" kstp="9" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP    9, STRESS PERIOD    1
+
+end timestep
+
+
+start timestep kper="1" kstp="10" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING         DATA-SAT IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP   10, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP   10, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =   351567001.8694                   GHB =           0.1369     GHB_0                            
+                RCHA =   386097906.9053                  RCHA =           0.1530     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =   737664908.7747              TOTAL IN =           0.2899
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =   451437213.5108                   DRN =           0.2006     DRN_0                            
+                 GHB =   171127079.1345                   GHB =       7.0278E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =    36806009.7277                  EVTA =       1.9047E-02     EVTA_0                           
+
+           TOTAL OUT =   659370302.3730             TOTAL OUT =           0.2900
+
+            IN - OUT =    78294606.4018              IN - OUT =      -5.7757E-05
+
+ PERCENT DISCREPANCY =          11.21     PERCENT DISCREPANCY =          -0.02
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP   10 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 2.52288E+08 4.20480E+06  70080.      2920.0      7.9945    
+ STRESS PERIOD TIME 2.52288E+09 4.20480E+07 7.00800E+05  29200.      79.945    
+         TOTAL TIME 2.52288E+09 4.20480E+07 7.00800E+05  29200.      79.945    
+
+
+end timestep
+

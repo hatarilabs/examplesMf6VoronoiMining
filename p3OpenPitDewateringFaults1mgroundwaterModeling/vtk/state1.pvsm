@@ -16027,7 +16027,7 @@
     </Proxy>
     <Proxy group="representations" type="ScalarBarWidgetRepresentation" id="11248" servers="21">
       <Property name="Enabled" id="11248.Enabled" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="11248.Enabled.bool"/>
       </Property>
       <Property name="LockPosition" id="11248.LockPosition" number_of_elements="1">
@@ -16035,7 +16035,7 @@
         <Domain name="bool" id="11248.LockPosition.bool"/>
       </Property>
       <Property name="StickyVisible" id="11248.StickyVisible" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="11248.StickyVisible.bool"/>
       </Property>
       <Property name="UseNonCompositedRenderer" id="11248.UseNonCompositedRenderer" number_of_elements="1">
@@ -16284,7 +16284,7 @@
         <Domain name="bool" id="11248.UseCustomLabels.bool"/>
       </Property>
       <Property name="Visibility" id="11248.Visibility" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="11248.Visibility.bool"/>
       </Property>
       <Property name="WindowLocation" id="11248.WindowLocation" number_of_elements="1">
@@ -16576,7 +16576,7 @@
     </Proxy>
     <Proxy group="representations" type="ScalarBarWidgetRepresentation" id="12080" servers="21">
       <Property name="Enabled" id="12080.Enabled" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="12080.Enabled.bool"/>
       </Property>
       <Property name="LockPosition" id="12080.LockPosition" number_of_elements="1">
@@ -16584,7 +16584,7 @@
         <Domain name="bool" id="12080.LockPosition.bool"/>
       </Property>
       <Property name="StickyVisible" id="12080.StickyVisible" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="12080.StickyVisible.bool"/>
       </Property>
       <Property name="UseNonCompositedRenderer" id="12080.UseNonCompositedRenderer" number_of_elements="1">
@@ -16833,7 +16833,7 @@
         <Domain name="bool" id="12080.UseCustomLabels.bool"/>
       </Property>
       <Property name="Visibility" id="12080.Visibility" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="12080.Visibility.bool"/>
       </Property>
       <Property name="WindowLocation" id="12080.WindowLocation" number_of_elements="1">
