@@ -1,0 +1,671 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.6.2 05/12/2025
+
+   MODFLOW 6 compiled May 12 2025 12:42:18 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /Isrc\libmf6core.a.p /Isrc /I..\src
+/Isrc\libmf6_external.a.p /MT /nologo /warn:general /warn:truncated_source
+/stand:f18 /O2 /fpe:0 /heap-arrays:0 /traceback /fpp /Qdiag-disable:7416
+/Qdiag-disable:7025 /Qdiag-disable:5268 /Qdiag-disable:10448
+/Fdsrc\libmf6core.a.p\Utilities_compilerversion.F90.pdb
+/module:src\libmf6core.a.p
+/Fosrc/libmf6core.a.p/Utilities_compilerversion.F90.obj /c
+
+System command used to initiate simulation:
+C:\Users\saulm\Documents\openPitDewateringFaults1mgroundwaterModelingAux\bin\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    NEWTON-RAPHSON UNDER-RELAXATION based on the bottom elevation of the model will be applied to the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DISV -- VERTEX GRID DISCRETIZATION PACKAGE, VERSION 1 : 12/23/2015 - INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/DISV                           
+
+
+ Setting Discretization Options
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 15
+    NCPL = 35685
+    NVERT = 71042
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    TOP set from input file
+    BOTM set from input file
+ End Setting Discretization Griddata
+
+ Discretization Vertex data loaded
+ Discretization Cell2d data loaded
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/NPF                            
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/MF6MODEL/IC                             
+
+
+ Setting NPF Options
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ DRN   -- DRN PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/DRN_0                          
+
+ PROCESSING DRN BASE OPTIONS
+    DRN BOUNDARIES HAVE NAMES IN LAST COLUMN.
+ END OF DRN BASE OPTIONS
+
+ OPENED mf6Model.drn.obs
+ FILE TYPE:OBS   UNIT 1017   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ PROCESSING DRN OPTIONS
+ END OF DRN OPTIONS
+
+ PROCESSING DRN BASE DIMENSIONS
+    MAXBOUND =   29349
+ END OF DRN BASE DIMENSIONS
+
+ GHB   -- GHB PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/GHB_0                          
+
+ PROCESSING GHB BASE OPTIONS
+ END OF GHB BASE OPTIONS
+
+ PROCESSING GHB OPTIONS
+ END OF GHB OPTIONS
+
+ PROCESSING GHB BASE DIMENSIONS
+    MAXBOUND =     462
+ END OF GHB BASE DIMENSIONS
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/RCHA_0                         
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+    RECHARGE INPUT WILL BE READ AS ARRAY(S).
+ END OF RCHA OPTIONS
+
+ EVT   -- EVT PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/EVTA_0                         
+
+ PROCESSING EVT BASE OPTIONS
+ END OF EVT BASE OPTIONS
+
+ PROCESSING EVTA OPTIONS
+    EVAPOTRANSPIRATION INPUT WILL BE READ AS ARRAYS.
+ END OF EVTA OPTIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/STO                            
+
+
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1018
+      FILE NAME: mf6Model.disv.grb
+
+ OPENED mf6Model.disv.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.9.3 on 09/03/2025 at 10:28:36.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1019
+      FILE NAME: mf6Model.cbc
+
+ OPENED mf6Model.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1019   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1020
+      FILE NAME: mf6Model.hds
+
+ OPENED mf6Model.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1020   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+The observation utility is active for "DRN_0"
+ # File generated by Flopy version 3.9.3 on 09/03/2025 at 10:28:36.
+
+Processing observation options:
+
+Text output number of digits of precision set to: 10
+The PRINT_INPUT option has been specified.
+
+
+ OBSERVATIONS READ FROM FILE "mf6Model.drn.obs"
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ NAME                                     TYPE                                       TIME         LOCATION DATA                              OUTPUT FILENAME                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ DRAIN_FLOW                               CONTINUOUS  DRN                            ALL TIMES    "  Drain"                                  mf6Model.drn.obs.csv                                                            
+ PIT_FLOW                                 CONTINUOUS  DRN                            ALL TIMES    "  Pit"                                    mf6Model.drn.obs.csv                                                            
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+      THE LAST TIME STEP WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS STEADY-STATE
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =           0.2189                   GHB =           0.2189     GHB_0                            
+                RCHA =           0.1872                  RCHA =           0.1872     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =           0.4062              TOTAL IN =           0.4062
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =           0.7318                   DRN =           0.7318     DRN_0                            
+                 GHB =           0.2159                   GHB =           0.2159     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =       1.5873E-02                  EVTA =       1.5873E-02     EVTA_0                           
+
+           TOTAL OUT =           0.9635             TOTAL OUT =           0.9635
+
+            IN - OUT =          -0.5574              IN - OUT =          -0.5574
+
+ PERCENT DISCREPANCY =         -81.39     PERCENT DISCREPANCY =         -81.39
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+ STRESS PERIOD TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+         TOTAL TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+
+
+         ****FAILED TO MEET SOLVER CONVERGENCE CRITERIA IN TIME STEP 1 OF STRESS PERIOD 1****
+
+end timestep
+
+
+start timestep kper="2" kstp="1" mode="normal"
+
+
+ END OF FILE DETECTED IN OUTPUT CONTROL.
+ CURRENT OUTPUT CONTROL SETTINGS WILL BE 
+ REPEATED UNTIL THE END OF THE SIMULATION.
+
+ OUTPUT CONTROL FOR STRESS PERIOD 2 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 2 IS TRANSIENT
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      2
+
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    2
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   2
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      229379.0253                STO-SS =       1.8184E-03     STORAGE                          
+              STO-SY =      270672.0971                STO-SY =       2.1457E-03     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =    34124160.1891                   GHB =           0.2705     GHB_0                            
+                RCHA =    23617374.5130                  RCHA =           0.1872     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =    58241585.8246              TOTAL IN =           0.4617
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =    42097258.8467                   DRN =           0.3337     DRN_0                            
+                 GHB =    15239857.9443                   GHB =           0.1208     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =      904346.6719                  EVTA =       7.1692E-03     EVTA_0                           
+
+           TOTAL OUT =    58241463.4630             TOTAL OUT =           0.4617
+
+            IN - OUT =         122.3616              IN - OUT =       9.7443E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    2
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+ STRESS PERIOD TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+         TOTAL TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+
+
+end timestep
+
+
+start timestep kper="3" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 3 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 3 IS TRANSIENT
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV1 SAVING           STO-SY ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      3
+
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    3
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   3
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      310069.6915                STO-SS =       6.3967E-04     STORAGE                          
+              STO-SY =      410593.2757                STO-SY =       1.1092E-03     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =    68527313.4981                   GHB =           0.2727     GHB_0                            
+                RCHA =    47234748.8388                  RCHA =           0.1872     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =   116482725.3041              TOTAL IN =           0.4617
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =    85154975.1212                   DRN =           0.3413     DRN_0                            
+                 GHB =    29578559.5737                   GHB =           0.1137     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =     1749650.6815                  EVTA =       6.7011E-03     EVTA_0                           
+
+           TOTAL OUT =   116483185.3764             TOTAL OUT =           0.4617
+
+            IN - OUT =        -460.0723              IN - OUT =      -4.6172E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    3
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+ STRESS PERIOD TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+         TOTAL TIME 2.52288E+08 4.20480E+06  70080.      2920.0      7.9945    
+
+
+end timestep
+
+
+start timestep kper="4" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 4 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 4 IS TRANSIENT
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV1 SAVING           STO-SY ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      4
+
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    4
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   4
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      390052.8014                STO-SS =       6.3406E-04     STORAGE                          
+              STO-SY =      552657.0561                STO-SY =       1.1262E-03     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =   103161678.5509                   GHB =           0.2746     GHB_0                            
+                RCHA =    70852123.1645                  RCHA =           0.1872     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =   174956511.5730              TOTAL IN =           0.4635
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =   129195919.2425                   DRN =           0.3491     DRN_0                            
+                 GHB =    43228951.2798                   GHB =           0.1082     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =     2532443.9280                  EVTA =       6.2056E-03     EVTA_0                           
+
+           TOTAL OUT =   174957314.4504             TOTAL OUT =           0.4636
+
+            IN - OUT =        -802.8774              IN - OUT =      -2.7176E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    4
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+ STRESS PERIOD TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+         TOTAL TIME 3.78432E+08 6.30720E+06 1.05120E+05  4380.0      11.992    
+
+
+end timestep
+
+
+start timestep kper="5" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 5 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 5 IS TRANSIENT
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV1 SAVING           STO-SY ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      5
+
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    5
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   5
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      463712.5473                STO-SS =       5.8393E-04     STORAGE                          
+              STO-SY =      685945.7289                STO-SY =       1.0566E-03     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =   138015558.2471                   GHB =           0.2763     GHB_0                            
+                RCHA =    94469497.4903                  RCHA =           0.1872     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =   233634714.0137              TOTAL IN =           0.4652
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =   173958897.3505                   DRN =           0.3549     DRN_0                            
+                 GHB =    56436480.0310                   GHB =           0.1047     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =     3240120.9301                  EVTA =       5.6101E-03     EVTA_0                           
+
+           TOTAL OUT =   233635498.3116             TOTAL OUT =           0.4652
+
+            IN - OUT =        -784.2979              IN - OUT =       1.4729E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    5
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+ STRESS PERIOD TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+         TOTAL TIME 5.04576E+08 8.40960E+06 1.40160E+05  5840.0      15.989    
+
+
+end timestep
+
+
+start timestep kper="6" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 6 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 6 IS TRANSIENT
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV1 SAVING           STO-SY ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MF6MODEL         PACKAGE NPF             CONNECTED TO MODEL MF6MODEL         PACKAGE NPF              ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV06 SAVING              DRN IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE DRN_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV06 SAVING              GHB IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE GHB_0            ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV06 SAVING             RCHA IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE RCHA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+ UBDSV06 SAVING            EVTA  IN MODEL MF6MODEL         PACKAGE MF6MODEL        CONNECTED TO MODEL MF6MODEL         PACKAGE EVTA_0           ON UNIT   1019 AT TIME STEP      1, STRESS PERIOD      6
+
+ HEAD WILL BE SAVED ON UNIT 1020 AT END OF TIME STEP    1, STRESS PERIOD    6
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   6
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =      529778.9013                STO-SS =       5.2374E-04     STORAGE                          
+              STO-SY =      807365.4858                STO-SY =       9.6255E-04     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =   173068504.6436                   GHB =           0.2779     GHB_0                            
+                RCHA =   118086871.8161                  RCHA =           0.1872     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =   292492520.8467              TOTAL IN =           0.4666
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =   219318079.7075                   DRN =           0.3596     DRN_0                            
+                 GHB =    69297798.7949                   GHB =           0.1020     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =     3877326.0425                  EVTA =       5.0514E-03     EVTA_0                           
+
+           TOTAL OUT =   292493204.5449             TOTAL OUT =           0.4666
+
+            IN - OUT =        -683.6981              IN - OUT =       7.9750E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    6
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+ STRESS PERIOD TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+         TOTAL TIME 6.30720E+08 1.05120E+07 1.75200E+05  7300.0      19.986    
+
+
+end timestep
+

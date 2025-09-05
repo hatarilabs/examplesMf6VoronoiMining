@@ -1,0 +1,580 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.6.0 12/20/2024
+
+   MODFLOW 6 compiled Dec 31 2024 17:10:16 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /O2 /heap-arrays:0 /fpe:0 /traceback /nologo /fpp
+/c /module:win64\mod_mf6\ /object:win64\obj_mf6\
+
+System command used to initiate simulation:
+C:\Users\saulm\Documents\webinarUndergroundMineInflowModelingFlopyMf6Voronoi\Bin\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    NEWTON-RAPHSON UNDER-RELAXATION based on the bottom elevation of the model will be applied to the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DISV -- VERTEX GRID DISCRETIZATION PACKAGE, VERSION 1 : 12/23/2015 - INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/DISV                           
+
+
+ Setting Discretization Options
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 15
+    NCPL = 3682
+    NVERT = 6168
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    TOP set from input file
+    BOTM set from input file
+ End Setting Discretization Griddata
+
+ Discretization Vertex data loaded
+ Discretization Cell2d data loaded
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/NPF                            
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/MF6MODEL/IC                             
+
+
+ Setting NPF Options
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ DRN   -- DRN PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/DRN_0                          
+
+ PROCESSING DRN BASE OPTIONS
+ END OF DRN BASE OPTIONS
+
+ PROCESSING DRN OPTIONS
+ END OF DRN OPTIONS
+
+ PROCESSING DRN BASE DIMENSIONS
+    MAXBOUND =     783
+ END OF DRN BASE DIMENSIONS
+
+ GHB   -- GHB PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/GHB_0                          
+
+ PROCESSING GHB BASE OPTIONS
+ END OF GHB BASE OPTIONS
+
+ PROCESSING GHB OPTIONS
+ END OF GHB OPTIONS
+
+ PROCESSING GHB BASE DIMENSIONS
+    MAXBOUND =     113
+ END OF GHB BASE DIMENSIONS
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/RCHA_0                         
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+    RECHARGE INPUT WILL BE READ AS ARRAY(S).
+ END OF RCHA OPTIONS
+
+ EVT   -- EVT PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/EVTA_0                         
+
+ PROCESSING EVT BASE OPTIONS
+ END OF EVT BASE OPTIONS
+
+ PROCESSING EVTA OPTIONS
+    EVAPOTRANSPIRATION INPUT WILL BE READ AS ARRAYS.
+ END OF EVTA OPTIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/MF6MODEL/STO                            
+
+
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1017
+      FILE NAME: mf6Model.disv.grb
+
+ OPENED mf6Model.disv.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1017   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.9.2 on 04/07/2025 at 09:15:50.
+
+ PROCESSING OC OPTIONS
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1018
+      FILE NAME: mf6Model.hds
+
+ OPENED mf6Model.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS STEADY-STATE
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =           0.2966                   GHB =           0.2966     GHB_0                            
+                RCHA =       6.8018E-02                  RCHA =       6.8018E-02     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =           0.3646              TOTAL IN =           0.3646
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 DRN =           0.3265                   DRN =           0.3265     DRN_0                            
+                 GHB =       2.8449E-02                   GHB =       2.8449E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =       9.6847E-03                  EVTA =       9.6847E-03     EVTA_0                           
+
+           TOTAL OUT =           0.3646             TOTAL OUT =           0.3646
+
+            IN - OUT =      -3.6352E-07              IN - OUT =      -3.6352E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+ STRESS PERIOD TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+         TOTAL TIME  1.0000     1.66667E-02 2.77778E-04 1.15741E-05 3.16881E-08
+
+
+end timestep
+
+
+start timestep kper="2" kstp="1" mode="normal"
+
+
+ END OF FILE DETECTED IN OUTPUT CONTROL.
+ CURRENT OUTPUT CONTROL SETTINGS WILL BE 
+ REPEATED UNTIL THE END OF THE SIMULATION.
+
+ OUTPUT CONTROL FOR STRESS PERIOD 2 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 2 IS TRANSIENT
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    2
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   2
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =       7.5501E-02                STO-SS =       2.3941E-09     STORAGE                          
+              STO-SY =       4.2806E-02                STO-SY =       1.3574E-09     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =     9352667.9802                   GHB =           0.2966     GHB_0                            
+                RCHA =     2145000.0691                  RCHA =       6.8018E-02     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =    11497668.1676              TOTAL IN =           0.3646
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       9.6743E-05                STO-SS =       3.0677E-12     STORAGE                          
+              STO-SY =       5.7599E-03                STO-SY =       1.8265E-10     STORAGE                          
+                 DRN =    10295104.9819                   DRN =           0.3265     DRN_0                            
+                 GHB =      897158.4105                   GHB =       2.8449E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =      305417.1659                  EVTA =       9.6847E-03     EVTA_0                           
+
+           TOTAL OUT =    11497680.5641             TOTAL OUT =           0.3646
+
+            IN - OUT =         -12.3965              IN - OUT =      -3.9309E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    2
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+ STRESS PERIOD TIME 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+         TOTAL TIME 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+
+
+end timestep
+
+
+start timestep kper="3" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 3 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 3 IS TRANSIENT
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    3
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   3
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =        2618.1331                STO-SS =       8.3018E-05     STORAGE                          
+              STO-SY =        4748.2527                STO-SY =       1.5056E-04     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =    18706611.1475                   GHB =           0.2966     GHB_0                            
+                RCHA =     4290000.0702                  RCHA =       6.8018E-02     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =    23003977.6035              TOTAL IN =           0.3649
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       9.6743E-05                STO-SS =           0.0000     STORAGE                          
+              STO-SY =       5.7599E-03                STO-SY =           0.0000     STORAGE                          
+                 DRN =    20603732.2664                   DRN =           0.3269     DRN_0                            
+                 GHB =     1790255.2196                   GHB =       2.8320E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =      610036.8308                  EVTA =       9.6594E-03     EVTA_0                           
+
+           TOTAL OUT =    23004024.3226             TOTAL OUT =           0.3649
+
+            IN - OUT =         -46.7191              IN - OUT =      -1.0884E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    3
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+ STRESS PERIOD TIME 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+         TOTAL TIME 6.30720E+07 1.05120E+06  17520.      730.00      1.9986    
+
+
+end timestep
+
+
+start timestep kper="4" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 4 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 4 IS TRANSIENT
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    4
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   4
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =       10719.9592                STO-SS =       2.5691E-04     STORAGE                          
+              STO-SY =       17616.7044                STO-SY =       4.0806E-04     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =    28064696.5579                   GHB =           0.2967     GHB_0                            
+                RCHA =     6435000.0713                  RCHA =       6.8018E-02     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =    34528033.2929              TOTAL IN =           0.3654
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       9.6743E-05                STO-SS =           0.0000     STORAGE                          
+              STO-SY =       5.7599E-03                STO-SY =           0.0000     STORAGE                          
+                 DRN =    30942608.5862                   DRN =           0.3278     DRN_0                            
+                 GHB =     2674093.7342                   GHB =       2.8026E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =      911322.6396                  EVTA =       9.5537E-03     EVTA_0                           
+
+           TOTAL OUT =    34528024.9659             TOTAL OUT =           0.3654
+
+            IN - OUT =           8.3270              IN - OUT =       1.7455E-06
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    4
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+ STRESS PERIOD TIME 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+         TOTAL TIME 9.46080E+07 1.57680E+06  26280.      1095.0      2.9979    
+
+
+end timestep
+
+
+start timestep kper="5" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 5 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 5 IS TRANSIENT
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    5
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   5
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =       23743.0013                STO-SS =       4.1296E-04     STORAGE                          
+              STO-SY =       31856.5720                STO-SY =       4.5154E-04     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =    37429771.5063                   GHB =           0.2970     GHB_0                            
+                RCHA =     8580000.0724                  RCHA =       6.8018E-02     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =    46065371.1520              TOTAL IN =           0.3658
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       9.6743E-05                STO-SS =           0.0000     STORAGE                          
+              STO-SY =       5.7599E-03                STO-SY =           0.0000     STORAGE                          
+                 DRN =    41312901.0325                   DRN =           0.3288     DRN_0                            
+                 GHB =     3545900.3938                   GHB =       2.7645E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =     1206612.7935                  EVTA =       9.3636E-03     EVTA_0                           
+
+           TOTAL OUT =    46065414.2257             TOTAL OUT =           0.3658
+
+            IN - OUT =         -43.0737              IN - OUT =      -1.6299E-06
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    5
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+ STRESS PERIOD TIME 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+         TOTAL TIME 1.26144E+08 2.10240E+06  35040.      1460.0      3.9973    
+
+
+end timestep
+
+
+start timestep kper="6" kstp="1" mode="normal"
+
+
+ OUTPUT CONTROL FOR STRESS PERIOD 6 IS REPEATED USING SETTINGS FROM A PREVIOUS STRESS PERIOD.
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 6 IS TRANSIENT
+
+
+ HEAD WILL BE SAVED ON UNIT 1018 AT END OF TIME STEP    1, STRESS PERIOD    6
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   6
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =       41890.0168                STO-SS =       5.7544E-04     STORAGE                          
+              STO-SY =       44728.3611                STO-SY =       4.0816E-04     STORAGE                          
+                 DRN =           0.0000                   DRN =           0.0000     DRN_0                            
+                 GHB =    46804235.8698                   GHB =           0.2973     GHB_0                            
+                RCHA =    10725000.0735                  RCHA =       6.8018E-02     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+
+            TOTAL IN =    57615854.3211              TOTAL IN =           0.3663
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =       9.6743E-05                STO-SS =           0.0000     STORAGE                          
+              STO-SY =       5.7599E-03                STO-SY =           0.0000     STORAGE                          
+                 DRN =    51720621.0047                   DRN =           0.3300     DRN_0                            
+                 GHB =     4403749.8943                   GHB =       2.7202E-02     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =     1491537.2858                  EVTA =       9.0349E-03     EVTA_0                           
+
+           TOTAL OUT =    57615908.1907             TOTAL OUT =           0.3663
+
+            IN - OUT =         -53.8695              IN - OUT =      -3.4233E-07
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    6
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+ STRESS PERIOD TIME 3.15360E+07 5.25600E+05  8760.0      365.00     0.99932    
+         TOTAL TIME 1.57680E+08 2.62800E+06  43800.      1825.0      4.9966    
+
+
+end timestep
+
